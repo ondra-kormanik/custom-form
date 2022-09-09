@@ -1,0 +1,11 @@
+<mat-card fxLayout="column">
+    <mat-card-title>Custome Form Element</mat-card-title>
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+        <div class="custom-form-element" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-icon (click)="onRemove()" color="primary" class="icon-display">remove_circle</mat-icon>
+            <div class="quantity">{{quantity}}</div>
+            <mat-icon (click)="onAdd()" color="primary" class="icon-display">add_box</mat-icon>
+        </div>
+    </mat-card-content>
+</mat-card>
+
