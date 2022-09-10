@@ -2,8 +2,14 @@
     <mat-card color="primary">
         <mat-card-title>Outer Form</mat-card-title>
         <mat-card-content>
-            <form [formGroup]="outerForm" fxLayout="column" fxLayoutAlign="space-evenly center">
+            <form [formGroup]="outerForm" fxLayout="column" fxLayoutAlign="space-evenly start">
                 <app-custom-form-element [increment]=increment formControlName="quantity"></app-custom-form-element>
+                <mat-error *ngIf="outerForm.controls['quantity'].invalid">Wrong Quantity</mat-error>
+                <mat-form-field appearance="fill">
+                    <mat-label>Increment</mat-label>
+                    <input matInput type="number" formControlName="increment" placeholder="Some positive number">
+                    <mat-error *ngIf="outerForm.controls['increment'].invalid">Non Positive Increment</mat-error>
+                </mat-form-field>
             </form>
         </mat-card-content>
     </mat-card>
